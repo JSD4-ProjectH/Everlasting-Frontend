@@ -228,6 +228,7 @@ const Form = () => {
                 value={data.distance}
                 placeholder="km"
                 onChange={handleChange}
+                min={1}
               />
               {/* <p className="error-message">{formErrors.distance}</p> */}
             </div>

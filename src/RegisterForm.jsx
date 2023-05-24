@@ -47,7 +47,7 @@ function RegisterForm() {
         setLastNameError("lastname must atleast 3 long and contain only letters")
       }
       if(err.path[0]==='email'){
-        setEmailError("email is contain email format (@gmail.com Etc.)")
+        setEmailError("email must contain email format (@gmail.com)")
       }
       if(err.path[0]==='password'){
         setPasswordError("password is contain atleast 1uppercase, 1lowercase and number")

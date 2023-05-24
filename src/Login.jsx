@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import BACKEND_URL from "../config.js";
+import logoApp from './images/logo.png';
 
 function Copyright(props) {
   return (
@@ -128,7 +129,7 @@ export default function Login() {
                 alignItems: "center",
               }}
             >
-              <img src="./src/images/logot.png" width={40} />
+              <img src={logoApp} width={40} />
               <Typography component="h1" variant="h5">
                 Sign in
               </Typography>

@@ -203,7 +203,7 @@ function EditActivity() {
           <input type='datetime-local' placeholder='Time' name='timeEnd' value={editData.timeEnd||""} onChange={handlerChange} style={{backgroundColor:timeEndError&&editData.timeEnd?"salmon":null}}/>
           <p>{timeEndError&&editData.timeEnd?timeEndError:""}</p>
           
-          <input type='number' placeholder='Distance' name='distance' value={editData.distance||""} onChange={handlerChange} style={{backgroundColor:distanceError&&editData.distance?"salmon":null}}/>
+          <input type='number' placeholder='Distance' name='distance' value={editData.distance||""} onChange={handlerChange} style={{backgroundColor:distanceError&&editData.distance?"salmon":null}} min={1}/>
           <p>{distanceError&&editData.distance?distanceError:""}</p>
           
           <input type='file' />

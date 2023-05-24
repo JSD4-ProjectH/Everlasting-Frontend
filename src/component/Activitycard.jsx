@@ -8,6 +8,11 @@ import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import BACKEND_URL from "../../config.js";
+import run from '../images/elder-running.jpeg'
+import walk from '../images/elder-walking.jpeg'
+import swim from '../images/elder-swimming.jpeg'
+import bike from '../images/elder-biking.jpeg'
+import hike from '../images/elder-hiking.webp'
 
 const typeIconMap = {
   Running: "fa-person-running",
@@ -18,11 +23,11 @@ const typeIconMap = {
 };
 
 const typeImgMap = {
-  Running: "src/images/elder-running.jpeg",
-  Walking: "src/images/elder-walking.jpeg",
-  Swimming: "src/images/elder-swimming.jpeg",
-  Biking: "src/images/elder-biking.jpeg",
-  Hiking: "src/images/elder-hiking.webp",
+  Running: run,
+  Walking: walk,
+  Swimming: swim,
+  Biking: bike,
+  Hiking: hike,
 };
 
 function Activitycard({setRun, setWalk, setHike, setSwim, setBike}) {
