@@ -1,0 +1,92 @@
+@import "./style/global.css";
+
+.EditActivity-page{
+    min-width: 300px;
+    position: fixed;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 98vh;
+    /* border: 1px red solid; */
+}
+
+.EditActivity-formbox {
+    background-color: var(--primary-yellow);
+    border-radius: 30px;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px blue solid; */
+}
+
+.EditActivity-formbox>p{
+    font-size: 10px;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.EditActivity-formbox>span>p{
+    margin: 0;
+}
+
+.EditActivity-icon{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 5px 0;
+}
+
+.EditActivity-icon button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.EditActivity-icon>button:hover{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.EditActivity-icon img{
+    width: 40px;
+}
+
+.EditActivity-formbox>h2{
+    margin: 10px 0;
+}
+
+.EditActivity-formbox>input{
+    text-align: center;
+    margin: 5px 0;
+    width: 80%;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+}
+
+.EditActivity-formbox>button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-green);
+    color: white;
+    margin: 5px 0;
+}
+
+.EditActivity-formbox>button:hover{
+    /* background-color: var(--primary-yellow); */
+    box-shadow:2px 2px 5px 3px black ;
+}

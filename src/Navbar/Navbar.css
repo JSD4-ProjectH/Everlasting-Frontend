@@ -1,0 +1,174 @@
+@import "../style/global.css";
+
+/* navbar style */
+.Nav {
+    min-width: 300px;
+    background-color: var(--primary-orange);
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.hambergur-button {
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    display: none;
+}
+
+.Appname {
+    margin: 0 20px;
+    font-size: 30px;
+    font-weight: 800;
+    
+}
+
+.Nav>ul {
+    display: flex;
+    margin: 0;
+}
+
+li {
+    margin-right: 20px;
+    list-style: none;
+    width: 120px;
+    text-align: center;
+    background-color: var(--primary-green);
+    border-radius: 30px;
+}
+
+li:hover {
+    background-color: var(--primary-yellow);
+}
+
+li>a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+/* Modal style */
+.modal-box {
+    display:none;
+}
+
+
+
+@media (max-width: 768px) {
+    .hambergur-button{
+        display: inline;
+    }
+    
+    .close-button{
+        border: none;
+        background-color: transparent;
+    }
+
+    .Nav>ul{
+        display: none;
+    }
+
+    .modal-box[state='true'] {
+        position: fixed;
+        top: 0;
+        left: -40%;
+        background-color: white;
+        box-shadow: 5px 0 10px gray;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        animation: showmodal 0.3s linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes showmodal{
+        0%{
+            transform: translateX(0%);
+        }
+        100%{
+            transform: translateX(100%);
+        }
+    }
+
+    .modal-box[state='wait'] {
+        position: fixed;
+        top: 0;
+        left: 0%;
+        background-color: white;
+        box-shadow: 5px 0 10px gray;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        animation: closemodal 0.3s linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes closemodal{
+        0%{
+            transform: translateX(0%);
+        }
+        100%{
+            transform: translateX(-100%); 
+        }
+    }
+
+    .button-box{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        padding: 0 10px;
+    }
+
+    .modal-ul-box>ul{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-ul-box {
+        width: 100%;
+        
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        width: 150px;
+        margin: 20px 0;
+    }
+
+    li>a {
+        font-size: 2rem;
+    }
+
+    .backdrop {
+        position: absolute;
+        width: 100%;
+        height: 100vh;;
+        background-color: rgba(216, 213, 213, 0.7);
+        z-index: 1;
+    }
+}
+
+.Appname > a {
+    text-decoration: none;
+    color: black;
+}
+
+.Appname > a:hover {
+    color: white;
+}

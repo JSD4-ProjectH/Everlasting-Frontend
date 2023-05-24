@@ -1,0 +1,240 @@
+@import "./style/global.css";
+
+.profile {
+  /* border: 1px solid black; */
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  padding: 0;
+  background-color: rgba(6, 108, 107, 0.3);
+  backdrop-filter: blur(5px);
+  justify-content: space-evenly;
+  border-radius: 2rem;
+  
+}
+
+.profileH,
+.profileW,
+.profileA {
+  border: 1px solid black;
+}
+
+.editbtn {
+  margin: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.editbtn:hover {
+  box-shadow: 0 0 5px rgba(243, 189, 24, 1), 0 0 25px rgba(243, 189, 24, 1),0 0 50px rgba(243, 189, 24, 1), 0 0 200px rgba(243, 189, 24, 1);
+}
+
+.profilepic {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 10px solid rgba(239, 75, 63, 0.9);
+}
+
+.addbtn {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  margin: 20px 0px;
+  background-color: rgba(239, 75, 63, 1);
+}
+
+.addbtn:hover {
+  background-color: rgba(239, 75, 63, 1);
+  box-shadow: 0 0 5px rgba(243, 189, 24, 1), 0 0 25px rgba(243, 189, 24, 1),0 0 50px rgba(243, 189, 24, 1), 0 0 200px rgba(243, 189, 24, 1);
+}
+
+.profilecard {
+  border: none;
+  background-color: rgba(6, 108, 107, 0.4);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 15%;
+}
+
+.bigcontainer {
+  background-image: url(./images/background.PNG);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  position: absolute;
+  top: 9%;
+}
+
+.activitypic {
+  border-radius: 20px;
+  margin: 10px auto;
+  width: 100%;
+  height: 40%;
+  border:#ed4b3d 2px solid;
+}
+
+.editactivitybtn,
+.deleteactivitybtn,
+.addactivitybtn {
+  width: 50px;
+  margin: 0 10px;
+  padding: 0;
+  height: 50px;
+}
+
+.acdetail {
+  color: #ed4b3d;
+}
+
+.deleteactivitybtn {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.editactivitybtn {
+  position: absolute;
+  bottom: 8px;
+  right: 80px;
+}
+.editactivitybtn > a {
+  text-decoration: none;
+}
+
+.addactivitybtn {
+  position: absolute;
+  bottom: 8px;
+  right: 144px;
+}
+
+@media screen and (max-width: 1200px) {
+  .profilecard {
+    width: 23%;
+  }
+}
+
+.smaddbtn {
+  position: sticky;
+  width: 100%;
+  height: 60px;
+  top: 90;
+  background-color: rgba(239, 75, 63, 1);
+  z-index: 999;
+}
+
+.dashboardTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.addbtnleft {
+  position: fixed;
+  border-radius: 50%;
+  bottom: 0px;
+  right: 0px;
+  margin: 1rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  font-size: 50px;
+  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  padding-bottom: 10px;
+  opacity: 0.85;
+  background-color: #ed4b3d;
+  border-color: rgba(243, 189, 24, 0.6);
+}
+
+.addbtnleft:hover {
+  opacity: 1;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #ed4b3d;
+  border-color: rgba(243, 189, 24, 0.6);
+  box-shadow: 0 0 5px rgba(243, 189, 24, 1), 0 0 25px rgba(243, 189, 24, 1),0 0 50px rgba(243, 189, 24, 1), 0 0 200px rgba(243, 189, 24, 1);
+}
+
+.addbtnleft .addtext {
+  display: none;
+}
+
+.addbtnleft:hover > .addtext {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.addbtnleft:hover > .plussymbol {
+  display: none;
+}
+
+.cardtitle {
+  font-weight: 900;
+}
+
+.activitycard {
+  background: linear-gradient(135deg,rgba(243, 189, 24, 0.8),rgba(243, 189, 24, 0.3)) ;
+  backdrop-filter: blur (20px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(243, 189, 24, 0.5);
+  width: 22rem;
+  border-radius: 1.5rem;
+  margin-bottom: 1rem;
+
+}
+
+.cardrow {
+  justify-content: space-evenly;
+}
+
+
+.activitycard:hover {
+  scale: 1.025;
+  z-index: 999;
+  background-color: rgba(243, 189, 24, 0.6);
+  cursor: cell;
+  box-shadow: 0 0 5px rgba(239, 75, 63, 1), 0 0 15px rgba(239, 75, 63, 1),0 0 30px rgba(239, 75, 63, 1), 0 0 50px rgba(239, 75, 63, 1);
+  border: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .activitycard {
+    width: 80%;
+    margin: 10px auto 10px;
+  }
+}
+
+.actype {
+  color: var(--primary-green);
+}
+
+.actype:hover {
+  transition: 3s;
+  transform: translateX(100px);
+}
+
+.typetext {
+  font-size: 1.2rem;
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .activitypic {
+   display: none;
+  }
+}

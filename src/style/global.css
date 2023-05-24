@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+
+:root {
+    --primary-yellow: #f3bd18;
+    --primary-green: #066c6b;
+    --primary-orange: #ef4b3f;
+    --bg-gray: #333333;
+    --bg-white: #D2D2D2;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}

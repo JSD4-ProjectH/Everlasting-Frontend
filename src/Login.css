@@ -1,0 +1,15 @@
+.MuiFormHelperText-root {
+    color:red !important;
+    font-size: 0.9rem !important;
+    font-weight: 900 !important;
+}
+
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:focus {
+    border: none !important ;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline > css-14lo706 {
+    color: black !important;
+}
+

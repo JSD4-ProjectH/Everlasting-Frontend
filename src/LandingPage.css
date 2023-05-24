@@ -1,0 +1,109 @@
+.LandingPage {
+    background-image: url("https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+    padding: 0;  
+}
+
+.containerlanding {
+    margin-top: 5rem;
+}
+
+.Navlanding {
+    background-color: rgba(239, 75, 63, 1);
+    margin: 0;
+    padding: 0;
+    height: 8%;
+    width: 100%;
+    position: fixed;
+}
+
+a, .logintext {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+}
+
+.logotrans {
+    filter: drop-shadow(0px 0px 3px white);
+}
+
+.groupcard {
+    height: 15rem;
+    justify-content: space-evenly;
+    
+}
+
+.eachactivity {
+    width: 15rem;
+    padding: 0;
+}
+
+.acimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main1left{
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-shadow: 4px 4px 10px black;
+}
+
+.main2right {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-shadow: 4px 4px 10px black;
+    padding-left: 2rem !important;
+}
+
+.main1left>h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+.main1left, .main1right, .main2left, .main2right {
+    padding: 0;
+}
+
+.acimg1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.rowcontainer {
+    margin-bottom: 2rem;
+    background-color: rgba(210, 210, 210, 0.4);
+}
+
+.main2right > h1 {
+    font-size: 4rem;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.main2right > p {
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 425px) {
+    .main1right, .main2left, .groupcard {
+        display: none;
+    }
+}
+
+
+
