@@ -27,6 +27,7 @@ const Form = () => {
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+
   const dataArray = quickData.split(",");
 
   const postData = async () => {
