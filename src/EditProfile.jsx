@@ -8,6 +8,7 @@ import withReactContent from "sweetalert2-react-content";
 import "./EditProfile.css";
 import myPhoto from "./images/myPhoto.jpg";
 import BACKEND_URL from "../config.js";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function EditProfile() {
   const [profile, setProfile] = useState({
@@ -35,12 +36,9 @@ function EditProfile() {
     const getProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const fetchProfile = await axios.get(
-          `${BACKEND_URL}/user/getprofile`,
-          {
-            headers: { authorization: `Bearer ${token}` },
-          }
-        );
+        const fetchProfile = await axios.get(`${BACKEND_URL}/user/getprofile`, {
+          headers: { authorization: `Bearer ${token}` },
+        });
         setProfile(fetchProfile.data.userData);
         //save to new state
         setSaveProfile(fetchProfile.data.userData);
@@ -230,13 +228,19 @@ function EditProfile() {
       <form onChange={changeImageHandler} onSubmit={submitEditProfile}>
         <div className="body-formpage">
           <div className="form-box">
-            <label htmlFor="profile-img" className="upload-image">
-              <img
-                className="user-photo"
-                src={imagePreview || myPhoto}
-                style={{ width: "200px", height: "200px" }}
-              />
-            </label>
+            <div className="image-box" style={{ display: "flex" }}>
+              <label htmlFor="profile-img" className="upload-image">
+                <i
+                  class="fa-solid fa-pen-to-square fa-2x"
+                  style={{ position: "absolute", top: "305px" }}
+                ></i>
+                <img
+                  className="user-photo"
+                  src={imagePreview || myPhoto}
+                  style={{ width: "200px", height: "200px" }}
+                />
+              </label>
+            </div>
             <input
               type="file"
               accept="image/png, image/jpeg"
