@@ -122,7 +122,7 @@ function EditProfile() {
         cancelButtonText: "Cancel",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/Dashboard");
+          navigation("/Dashboard");
         }
       });
     } else if (checkInput()) {
