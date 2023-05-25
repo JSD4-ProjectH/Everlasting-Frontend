@@ -69,7 +69,6 @@ export default function Login() {
         email: values.email,
         password: values.password,
       });
-      console.log(resData.data.status);
       if (resData.data.status === 400) {
         alert(resData.data.message);
       } else {
@@ -140,7 +139,6 @@ export default function Login() {
               >
                 {(props) => (
                   <Form style={{ width: "90%" }}>
-                    {/* {console.log(props)} */}
                     <Field
                       as={TextField}
                       margin="normal"

@@ -140,9 +140,7 @@ function EditActivity() {
     const fetchEditData = async () => {
       try {
         const token = localStorage.getItem("token");
-        console.log(id);
         const EditData = await axios.get(`${BACKEND_URL}/activity/getactivity/${id}`,{headers: {authorization:`Bearer ${token}`}})
-        console.log(EditData);
         setEditData({activity:EditData.data.activityType,  
                     activityName:EditData.data.activityName, 
                     activityDetail:EditData.data.activityDetail, 

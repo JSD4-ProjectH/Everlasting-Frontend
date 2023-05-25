@@ -44,7 +44,6 @@ function EditProfile() {
         setProfile(fetchProfile.data.userData);
         //save to new state
         setSaveProfile(fetchProfile.data.userData);
-        console.log(fetchProfile.data.userData);
       } catch (err) {}
     };
     getProfile();
@@ -80,10 +79,8 @@ function EditProfile() {
   //change file to base64 for sending to backend
   function setFileToBase64(file) {
     const reader = new FileReader();
-    console.log("reader", reader);
     reader.onloadend = (readerEvt) => {
       let binaryString = readerEvt.target.result;
-      console.log("bistr", binaryString);
       setProfile((prev) => ({
         ...prev,
         profileImage: window.btoa(binaryString),
@@ -163,7 +160,6 @@ function EditProfile() {
           navigation("/Dashboard");
         });
       } catch (err) {
-        console.log(err);
       }
     } else if (profile.height === "" || profile.weight === "") {
       const msg = "Height and Weight must be specified!!";
