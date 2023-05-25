@@ -34,11 +34,20 @@ function Profile() {
   }, [profile.profileImage]);
 
   return (
-    <Card className="profilecard" key={profile._id}>
+    <Card 
+      className="profilecard" 
+      key={profile._id} 
+      style={{
+        display:'flex',  
+        flexDirection:'column', 
+        justifyContent:'center',
+        alignItems:'center'
+      }}>
       <Card.Img
         variant="top"
         src={imagePreview || DefaultImg}
         className="profilepic"
+        style={{width:'230px',height:'230px'}}
       />
       <Card.Body>
         <Card.Title>
