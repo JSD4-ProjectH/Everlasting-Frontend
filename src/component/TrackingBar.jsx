@@ -48,7 +48,6 @@ const activityData = {
       )
       setUpdata(resData.data.user.updatedAt)
       setUserWeight(resData.data.user.weight)
-      // console.log(resData.data.user)
     }
     fetchData()
   }, [])
