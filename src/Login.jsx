@@ -20,8 +20,10 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import BACKEND_URL from "../config.js";
-import logoApp from './images/logo.png';
+import logoApp from "./images/logo.png";
 
 function Copyright(props) {
   return (
@@ -70,10 +72,19 @@ export default function Login() {
         password: values.password,
       });
       if (resData.data.status === 400) {
-        alert(resData.data.message);
+        Swal.fire({
+          icon: "error",
+          title: "Invalid",
+          text: resData.data.message,
+        });
       } else {
         localStorage.setItem("token", resData.data.message);
-        navigation("/Dashboard");
+        Swal.fire({
+          icon: "success",
+          title: "Login success",
+        }).then(() => {
+          navigation("/Dashboard");
+        });
       }
     };
     login();
@@ -267,7 +278,7 @@ export default function Login() {
             </Typography>
           </Grid>
         </Grid>
-      </ThemeProvider>  
+      </ThemeProvider>
     </Layout>
   );
 }

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import "./AddActivity.css";
 import Layout from "./Navbar/Layout";
-import bikeIcon from './images/bike_icon.png'
-import hikeIcon from './images/hike_icon.png'
-import runIcon from './images/run_icon.png'
-import walkIcon from './images/walk_icon.png'
-import swimIcon from './images/swim_icon.png'
-import { useParams } from "react-router-dom";
+import bikeIcon from "./images/bike_icon.png";
+import hikeIcon from "./images/hike_icon.png";
+import runIcon from "./images/run_icon.png";
+import walkIcon from "./images/walk_icon.png";
+import swimIcon from "./images/swim_icon.png";
 import BACKEND_URL from "../config.js";
 
 const Form = () => {
@@ -26,10 +27,9 @@ const Form = () => {
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const dataArray = quickData.split(",")
 
+  const dataArray = quickData.split(",");
 
-  
   const postData = async () => {
     const token = localStorage.getItem("token");
     const response = await axios.post(
@@ -55,8 +55,13 @@ const Form = () => {
         finishTime: "",
         activityImage: "",
       });
-      alert(response.data.message);
-      navigation("/Dashboard");
+      const MySwal = withReactContent(Swal);
+      MySwal.fire({
+        icon: "success",
+        title: "New Card Added!",
+      }).then(() => {
+        navigation("/Dashboard");
+      });
     }
   };
 
@@ -76,13 +81,13 @@ const Form = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(dataArray[0]==='true'){
-      data.startTime = dataArray[1]
-      data.finishTime = dataArray[2]
+    if (dataArray[0] === "true") {
+      data.startTime = dataArray[1];
+      data.finishTime = dataArray[2];
       setFormErrors(validate(data));
       setIsSubmit(true);
       postData();
-    }else{
+    } else {
       setFormErrors(validate(data));
       setIsSubmit(true);
       postData();
@@ -201,9 +206,9 @@ const Form = () => {
               <input
                 type="datetime-local"
                 name="startTime"
-                value={dataArray[0]==='true'?dataArray[1]:data.startTime}
+                value={dataArray[0] === "true" ? dataArray[1] : data.startTime}
                 onChange={handleChange}
-                readOnly={dataArray[0]==='true'?true:false}
+                readOnly={dataArray[0] === "true" ? true : false}
               />
               <p className="error-message">{formErrors.startTime}</p>
             </div>
@@ -213,9 +218,9 @@ const Form = () => {
               <input
                 type="datetime-local"
                 name="finishTime"
-                value={dataArray[0]==='true'?dataArray[2]:data.finishTime}
+                value={dataArray[0] === "true" ? dataArray[2] : data.finishTime}
                 onChange={handleChange}
-                readOnly={dataArray[0]==='true'?true:false}
+                readOnly={dataArray[0] === "true" ? true : false}
               />
               <p className="error-message">{formErrors.finishTime}</p>
             </div>
@@ -232,7 +237,7 @@ const Form = () => {
               />
               {/* <p className="error-message">{formErrors.distance}</p> */}
             </div>
-            <div>
+            {/* <div>
               <label>Attach an image</label>
               <br />
               <input
@@ -241,7 +246,7 @@ const Form = () => {
                 value={data.file}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
             <button className="addNewActivity-btn" type="submit">
               {" "}
               Add New Activity{" "}

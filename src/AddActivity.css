@@ -48,11 +48,10 @@ input:focus {
     justify-content: center;
     align-items: center;
     background-color: #F3BD18;
-    /* margin: 5em 3em 2em 3em; */
     border-radius: 2em;
-    position: relative;
+    position: absolute;
     padding-top: 20px;
-    z-index: 99999;
+    z-index: -1;
     width: 80%;
     top: 12vh;
     margin: 0 10vw;

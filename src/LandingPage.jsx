@@ -25,9 +25,15 @@ function LandingPage() {
             />{" "}
             <span className="logintext">Everlasting</span>
           </Navbar.Brand>
-          <a href={localStorage.token ? "/Dashboard" : "/Login"}>
-            <span className="logintext">Log in</span>
-          </a>
+          {localStorage.token ? (
+            <a href="/Dashboard">
+              <span className="logintext">DASHBOARD</span>
+            </a>
+          ) : (
+            <a href="/Login">
+              <span className="logintext">Log in</span>
+            </a>
+          )}
         </Container>
       </Navbar>
       {main()}
@@ -152,4 +158,4 @@ function main() {
       </Row> */}
     </Container>
   );
-} 
+}
