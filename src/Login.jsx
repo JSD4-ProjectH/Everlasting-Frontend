@@ -65,7 +65,7 @@ export default function Login() {
     setTimeout(() => {
       props.resetForm();
       props.setSubmitting(false);
-    }, 2000);
+    }, 20000);
     const login = async () => {
       const resData = await axios.post(`${BACKEND_URL}/user/login`, {
         email: values.email,

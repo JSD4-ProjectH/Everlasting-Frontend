@@ -85,7 +85,13 @@ function Activitycard({ setRun, setWalk, setHike, setSwim, setBike }) {
       if (result.isConfirmed) {
         axios
           .delete(`${BACKEND_URL}/activity/delete/${id}`)
-          .then((res) => console.log(res))
+          .then(
+            Swal.fire({
+              icon: "success",
+              title: "Delete Success!!",
+              text: "T T",
+            })
+          )
           .catch((err) => console.log(err));
         setIsDelete(true);
       }
