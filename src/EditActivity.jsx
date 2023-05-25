@@ -169,6 +169,7 @@ function EditActivity() {
   }, []);
 
   /* FOR UPDATE DATA */
+  
   return (
     <div>
       <Navbar />
