@@ -185,7 +185,7 @@ function EditProfile() {
   function checkInput() {
     const height = profile.height;
     const weight = profile.weight;
-    const regex = /^[0-9]\d*$/;
+    const regex = /^[0-9]\d*(\.\d+)?$/;
     let status = true;
     if (height && weight) {
       if (!regex.test(height) || !regex.test(weight)) {
