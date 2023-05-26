@@ -24,6 +24,7 @@ function EditProfile() {
   const [adviseWeights, setAdviseWeights] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   //useNavigate
   const navigation = useNavigate();
@@ -103,7 +104,7 @@ function EditProfile() {
   //submit handler
   async function submitEditProfile(e) {
     e.preventDefault();
-
+    setIsLoading(true);
     const { firstname, lastname, height, weight, profileImage } = profile;
 
     //check condition to make sure user can choose to go back or stay here to edit
@@ -157,8 +158,7 @@ function EditProfile() {
         }).then(() => {
           navigation("/Dashboard");
         });
-      } catch (err) {
-      }
+      } catch (err) {}
     } else if (profile.height === "" || profile.weight === "") {
       const msg = "Height and Weight must be specified!!";
       setErrorMessage(msg);
@@ -316,7 +316,7 @@ function EditProfile() {
             <p className="adivised-weight">
               Your advise weight is <b>{adviseWeights}</b> Kg
             </p>
-            <button type="submit">Save</button>
+            <button type="submit">{isLoading ? "Loading" : "Save"}</button>
           </div>
         </div>
       </form>

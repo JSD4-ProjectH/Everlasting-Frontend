@@ -33,6 +33,7 @@ function EditActivity() {
   const [timeStartError, setTimeStartError] = useState("");
   const [timeEndError, setTimeEndError] = useState("");
   const [distanceError, setDistanceError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const { id } = useParams();
   const NavigateAFTupdate = useNavigate();
@@ -103,6 +104,7 @@ function EditActivity() {
 
   function handlerUpdate(e) {
     e.preventDefault();
+    setIsLoading(true);
     const { error, value } = editSchema.validate(editData, {
       abortEarly: false,
     });
@@ -169,7 +171,7 @@ function EditActivity() {
   }, []);
 
   /* FOR UPDATE DATA */
-  
+
   return (
     <div>
       <Navbar />
@@ -326,7 +328,9 @@ function EditActivity() {
 
           <input type="file" />
           {/* <p></p> */}
-          <button onClick={handlerUpdate}>Update</button>
+          <button onClick={handlerUpdate}>
+            {isLoading ? "Loading" : "Update"}
+          </button>
         </div>
       </div>
     </div>

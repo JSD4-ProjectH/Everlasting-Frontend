@@ -255,8 +255,7 @@ const Form = () => {
               type="submit"
               disabled={isSelect ? true : false}
             >
-              {" "}
-              Add New Activity{" "}
+              {isSelect ? "Loading" : "Add New Activity"}
             </button>
           </form>
         </div>
