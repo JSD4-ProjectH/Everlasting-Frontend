@@ -22,6 +22,7 @@ function RegisterForm() {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigate();
 
   const handlerChange = ({ target }) => {
@@ -96,6 +97,7 @@ function RegisterForm() {
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const { error, value } = registerSchema.validate(registerData, {
       abortEarly: false,
     });
@@ -222,7 +224,9 @@ function RegisterForm() {
           <button onClick={handlerPassword}>
             {showPassword ? "hide password" : "show password"}
           </button>
-          <button onClick={handlerSubmit}>SUBMIT</button>
+          <button onClick={handlerSubmit}>
+            {isLoading ? "Loading" : "SUBMIT"}
+          </button>
           <span>
             Already has an account?
             <a href="#"> Sign in</a> here!
