@@ -228,7 +228,7 @@ function EditProfile() {
               <label htmlFor="profile-img" className="upload-image">
                 <i
                   class="fa-solid fa-pen-to-square fa-2x"
-                  style={{ position: "absolute", top: "305px" }}
+                  style={{ position: "relative", top: "95px" }}
                 ></i>
                 <img
                   className="user-photo"
