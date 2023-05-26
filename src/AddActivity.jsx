@@ -27,6 +27,7 @@ const Form = () => {
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isSelect, setIsSelect] = useState(false);
 
   const dataArray = quickData.split(",");
 
@@ -81,6 +82,7 @@ const Form = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSelect(true);
     if (dataArray[0] === "true") {
       data.startTime = dataArray[1];
       data.finishTime = dataArray[2];
@@ -92,6 +94,7 @@ const Form = () => {
       setIsSubmit(true);
       postData();
     }
+    setIsSelect(false);
   };
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -247,9 +250,12 @@ const Form = () => {
                 onChange={handleChange}
               />
             </div> */}
-            <button className="addNewActivity-btn" type="submit">
-              {" "}
-              Add New Activity{" "}
+            <button
+              className="addNewActivity-btn"
+              type="submit"
+              disabled={isSelect ? true : false}
+            >
+              {isSelect ? "Loading" : "Add New Activity"}
             </button>
           </form>
         </div>
