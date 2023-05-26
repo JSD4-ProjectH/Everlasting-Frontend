@@ -97,7 +97,7 @@ function RegisterForm() {
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(false);
+    setIsLoading(true);
     const { error, value } = registerSchema.validate(registerData, {
       abortEarly: false,
     });
