@@ -35,7 +35,7 @@ function Profile() {
 
   return (
     <Card 
-      className="profilecard" 
+      className="profilecard"
       key={profile._id} 
       style={{
         display:'flex',  
